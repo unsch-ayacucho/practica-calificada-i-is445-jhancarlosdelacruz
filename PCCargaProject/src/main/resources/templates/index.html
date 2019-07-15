@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="_header :: header(~{::title})">
+    <title></title>
+</head>
+<tr>
+<th> ejemplo 1 </th>
+</tr>
+<body class="bg-light">
+
+<th:block th:replace="_nav :: nav"/>
+
+<main role="main" class="container">
+
+    <div class="starter-template">
+        <h1></h1>
+    </div>   
+
+    <div>
+        
+        <div class="row">
+            <div class="col-md-10">
+                <table class="table table-striped">
+                <thead>
+                <table border="">
+                <tr>                    
+                    <th>Nombre</th>
+                    
+           
+                    <th>Horas</th>
+                    
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="item : ${items}">                    
+                    <td><span th:text="${item.nombres}+' '+${item.apellidos}"></span></td>                    
+                    <td th:text="${item.horas}"></td> 
+                </tr>
+                </tbody>
+            </table>
+            </div>
+            <div class="col-md-2">
+                
+            </div>
+        </div>
+       
+    </div>
+
+
+    
+</main><!-- /.container -->
+
+<th:block th:replace="_include :: basic"/>
+</body>
+</html>
